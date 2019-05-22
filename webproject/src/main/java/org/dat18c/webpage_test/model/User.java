@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class User
 {
+    //Fields
+
     @Id
     @Column(name = "id")
     private int id;
@@ -31,9 +33,9 @@ public class User
     @Column(name = "user_role")
     private boolean adminRole;
 
-    public User() {
-        
-    }
+    //Constructors
+
+    public User() {}
 
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
@@ -41,6 +43,8 @@ public class User
         this.email = email;
         this.password = password;
     }
+
+    //Getters & Setters
 
     public int getId() {
         return id;
@@ -90,6 +94,8 @@ public class User
         this.adminRole = isAdmin;
     }
     
+    //Methods
+
     @Override
     public String toString() {
         return "User [id=" + id + " firstName=" + firstName + ", lastName=" + lastName + "]";

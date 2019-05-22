@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 /**
  * HomeController
  */
@@ -27,7 +26,6 @@ public class HomeController {
         if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("ADMIN"))) 
         {
             //Return admin dashboard
-            System.out.println("admin");
             return "redirect:/admin/dashboard";
         } 
         else

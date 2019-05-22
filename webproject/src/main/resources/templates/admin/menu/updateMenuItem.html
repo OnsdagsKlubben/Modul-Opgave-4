@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Grabbit | Dashboard</title>
+</head>
+<body>
+    <!-- Navbar fragment -->
+    <div th:insert="fragments/navbar"></div>
+    
+    <!-- Menu Item update form-->
+    <div class="container">
+        <h1>Update menu item</h1>
+        <br>
+        <form th:action="@{/admin/menu/update}" method="POST">
+            <div class="form-group">
+                <!-- Hidden input to get the menuItem id -->
+                <input type="hidden" name="id" th:value="${menuItem.id}">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Write the name here" th:value="${menuItem.name}">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" name="description" class="form-control" placeholder="Write the description here" th:value="${menuItem.description}">
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" name="price" class="form-control" placeholder="Write the price here" th:value="${menuItem.price}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Scripts fragment-->
+    <div th:insert="fragments/bootstrapScripts"></div>
+</body>
+</html>

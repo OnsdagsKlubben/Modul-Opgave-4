@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
  * UserDetailsRepository
  */
 @Repository
-public interface UserDetailsRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> 
+{
+    //Used for login authentication
     User findByEmail(String username);
 }

@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.dat18c.webpage_test.model.User;
-import org.dat18c.webpage_test.repository.UserDetailsRepository;
+import org.dat18c.webpage_test.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,58 +20,69 @@ import org.springframework.stereotype.Service;
 public class UserDetailsServiceImplementation implements UserDetailsService 
 {
     @Autowired
-    private UserDetailsRepository userDetailsRepository;
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException 
     {
-        User user = userDetailsRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email);
 
-        if (user == null) {
+        if (user == null) 
+        {
             throw new UsernameNotFoundException("User not found!");
         }
 
-        UserDetails userDetails = new UserDetails(){
+        UserDetails userDetails = new UserDetails()
+        {
     
             private static final long serialVersionUID = 1L;
 
             @Override
-            public boolean isEnabled() {
+            public boolean isEnabled() 
+            {
                 return true;
             }
         
             @Override
-            public boolean isCredentialsNonExpired() {
+            public boolean isCredentialsNonExpired() 
+            {
                 return true;
             }
         
             @Override
-            public boolean isAccountNonLocked() {
+            public boolean isAccountNonLocked() 
+            {
                 return true;
             }
         
             @Override
-            public boolean isAccountNonExpired() {
+            public boolean isAccountNonExpired() 
+            {
                 return true;
             }
         
             @Override
-            public String getUsername() {
+            public String getUsername() 
+            {
                 return user.getEmail();
             }
         
             @Override
-            public String getPassword() {
+            public String getPassword() 
+            {
                 return user.getPassword();
             }
         
             @Override
-            public Collection<? extends GrantedAuthority> getAuthorities() {
+            public Collection<? extends GrantedAuthority> getAuthorities() 
+            {
 
-                if (!user.getAdminRole()) {
+                if (!user.getAdminRole()) 
+                {
                     return Collections.singleton(new SimpleGrantedAuthority("USER"));
                 } 
-                else {
+                else 
+                {
                     return Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
                 }
             }

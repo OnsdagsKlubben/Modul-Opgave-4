@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Scripts fragment -->
+    <div th:insert="fragments/bootstrapScripts"></div>
+    
+    <!-- Datatables css, js imports -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+    <title>Grabbit | Dashboard</title>
+</head>
+<body>
+    <!-- Navbar fragment -->
+    <div th:insert="fragments/navbar"></div>
+
+    <!-- Display menu items here in a table -->
+    <div class="container">
+      <h1>Menu items table</h1>
+      <br>
+      <table id="myTable" class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col" style="width: 105px">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr th:each="menuItem : ${menuItems}">
+              <td th:text="${menuItem.id}"></td>
+              <td th:text="${menuItem.name}"></td>
+              <td th:text="${menuItem.description}"></td>
+              <td th:text="${menuItem.price}"></td>
+              <td>
+                  <a th:href="@{'/admin/menu/update/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">update</a>
+                  <a th:href="@{'/admin/menu/delete/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">delete</a>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination script -->
+    <script>
+      $(document).ready( function () {
+    $('#myTable').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+    } );
+    </script>
+
+    
+
+</body>
+</html>

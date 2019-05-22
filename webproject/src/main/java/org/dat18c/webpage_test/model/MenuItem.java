@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Table(name = "menu_items")
 public class MenuItem {
 
+    //Fields
+
     @Id
     @Column(name = "id")
     private int id;
@@ -20,7 +22,7 @@ public class MenuItem {
     private String name;
 
     @Column(name = "price")
-    private float price;
+    private int price;
 
     @Column(name = "description")
     private String description;
@@ -28,12 +30,18 @@ public class MenuItem {
     @Column(name = "picture_url")
     private String pictureURL;
 
-    public MenuItem(String name, float price, String description, String pictureURL) {
+    //Constructors
+
+    public MenuItem() {}
+
+    public MenuItem(String name, int price, String description, String pictureURL) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.pictureURL = pictureURL;
     }
+
+    //Getters & Setters
 
     public int getId() {
         return id;
@@ -65,5 +73,20 @@ public class MenuItem {
 
     public void setPictureURL(String pictureURL) {
         this.pictureURL = pictureURL;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    //Methods
+    
+    @Override
+    public String toString() {
+        return "MenuItem [id=" + id + ", name=" + name + "]";
     }
 }
