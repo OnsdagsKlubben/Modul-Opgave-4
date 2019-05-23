@@ -15,13 +15,14 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
  */
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter
+{
     @Autowired
     UserDetailsServiceImplementation userDetailsService;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception 
+    {
         http.authorizeRequests()
             .antMatchers("/login")
             .permitAll()
@@ -40,5 +41,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
         return provider;
     }
-
 }

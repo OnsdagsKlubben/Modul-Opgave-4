@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 <head>
@@ -37,29 +37,28 @@
           </tr>
         </thead>
         <tbody>
-            <tr th:each="menuItem : ${menuItems}">
-              <td th:text="${menuItem.id}"></td>
-              <td th:text="${menuItem.name}"></td>
-              <td th:text="${menuItem.description}"></td>
-              <td th:text="${menuItem.price}"></td>
-              <td>
-                  <a th:href="@{'/admin/menu/update/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">update</a>
-                  <a th:href="@{'/admin/menu/delete/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">delete</a>
-              </td>
-            </tr>
+          <tr th:each="menuItem : ${menuItems}">
+            <td th:text="${menuItem.id}"></td>
+            <td th:text="${menuItem.name}"></td>
+            <td th:text="${menuItem.description}"></td>
+            <td th:text="${menuItem.price}"></td>
+            <td>
+              <a th:href="@{'/admin/menu/update/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">update</a>
+              <a th:href="@{'/admin/menu/delete/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">delete</a>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
 
     <!-- Pagination script -->
     <script>
-      $(document).ready( function () {
-    $('#myTable').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-    } );
+      $(document).ready(function() 
+      {
+        $('#myTable').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+      });
     </script>
-
-    
 
 </body>
 </html>
