@@ -21,53 +21,54 @@
     <div th:insert="fragments/bootstrapScripts"></div>
 </head>
 <body>
+    <!-- Navbar -->
+    <div th:insert="@{fragments/navbar-home}"></div>
 
     <!-- Frontpage -->
-    <div id="wrap">
-        <div id="main" class="container" style="margin-top: 80px">
-            <div class="container-fluid" style="padding-bottom: 20px;">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2 style="margin-bottom: 25px">ABOUT GRABBIT</h2>
-                        <h4 style="margin-bottom: 25px; font-size: 24px; margin-right: 90px;">
-                            Laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </h4> 
-                        <p style="margin-right: 90px; margin-bottom: 25px; color: #636363;">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <button class="btn btn-outline-dark btn-lg">Get in Touch</button>
+    <div id="wrap" style="min-width: 960px;">
+            <div id="main">
+                <div class="container-fluid" style="padding-bottom: 20px; padding-top: 80px; padding: 50px 60px;">
+                        <div class="row">
+                            <div class="col-sm-8" style="margin-left: 13%; margin-right: -13%; padding-right: 21%;">
+                                <h2 style="margin-bottom: 25px">ABOUT GRABBIT</h2>
+                                <h4 style="margin-bottom: 25px;font-size: 24px;">
+                                    Laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </h4> 
+                                <p style="margin-bottom: 25px; color: #636363;">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                                <button class="btn btn-outline-dark btn-lg">Get in Touch</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <i style="font-size: 230px; color: #022f3b;" class="fas fa-carrot fa-10x"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <i style="font-size: 200px; color: #022f3b;" class="fas fa-carrot fa-10x"></i>
-                    </div>
-                </div>
-            </div>
-                
-                <div class="container-fluid" style="background-color: #f6f6f6; padding-top: 40px; padding-bottom: 40px">
+                <div class="container-fluid" style="background-color: #f6f6f6; padding-top: 40px; padding-bottom: 40px; padding: 50px 60px;">
                     <div class="row">
-                    <div class="col-sm-4">
-                        <i style="font-size: 200px; margin-left: 50px; color: #022f3b;" class="fas fa-globe-americas fa-10x"></i>
-                    </div>
-                    <div class="col-sm-8">
-                        <h2 style="margin-bottom: 25px">OUR VALUES</h2>
-                        <h4 style="margin-bottom: 25px; font-size: 24px; margin-right: 90px;"><strong>MISSION:</strong> Elimate queues & combat food waste!</h4> 
-                        <p style=" color: #636363; margin-right: 90px">
-                            <strong>VISION:</strong>
-                            Our vision is to .. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
+                        <div class="col-sm-4" style="margin-right: -10%; margin-left: 8%;">
+                            <i style="font-size: 230px; margin-left: 50px; color: #022f3b;" class="fas fa-globe-americas fa-10x"></i>
+                        </div>
+                            <div class="col-sm-8" style="padding-right: 18%; padding-left: 12%;">
+                                <h2 style="margin-bottom: 25px">OUR VALUES</h2>
+                                <h4 style="margin-bottom: 25px; font-size: 24px; margin-right: 90px;"><strong>MISSION:</strong> Elimate queues &amp; combat food waste!</h4> 
+                                <p style="color: #636363;">
+                                    <strong>VISION:</strong>
+                                    Our vision is to .. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Footer fragment -->
     <div th:insert="fragments/footer"></div>
