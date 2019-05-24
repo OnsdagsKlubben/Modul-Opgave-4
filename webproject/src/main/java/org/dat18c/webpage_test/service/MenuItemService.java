@@ -32,7 +32,7 @@ public class MenuItemService
     {
         Optional<MenuItem> optionalMenuItem = menuItemRepository.findById(id);
         
-        if (!optionalMenuItem.isEmpty()) 
+        if (optionalMenuItem.isPresent()) 
         {
             return optionalMenuItem.get();
         }

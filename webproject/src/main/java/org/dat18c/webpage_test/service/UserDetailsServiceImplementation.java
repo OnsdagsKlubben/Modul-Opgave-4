@@ -87,6 +87,7 @@ public class UserDetailsServiceImplementation implements UserDetailsService
                 }
             }
         };
+        System.out.println(userDetails.getAuthorities());
         return userDetails;
     }
 
