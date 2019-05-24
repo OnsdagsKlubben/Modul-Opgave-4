@@ -1,5 +1,7 @@
 package org.dat18c.webpage_test.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,18 +21,21 @@ public class Order {
     private int id;
 
     @Column(name = "user_id")
-    private int userID;
+    private int userId;
 
     @Column(name = "menu_item_id")
-    private int menuItemID;
+    private int menuItemId;
+
+    @Column(name = "create_time")
+    private Timestamp createTime;
 
     //Constructors
 
     public Order() {}
 
-    public Order(int userID, int menuItemID) {
-        this.userID = userID;
-        this.menuItemID = menuItemID;
+    public Order(int userId, int menuItemId) {
+        this.userId = userId;
+        this.menuItemId = menuItemId;
     }
 
     //Getters & Setters
@@ -43,26 +48,34 @@ public class Order {
         this.id = id;
     }
 
-    public int getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserId(int userID) {
+        this.userId = userID;
     }
 
-    public int getMenuItemID() {
-        return menuItemID;
+    public int getMenuItemId() {
+        return menuItemId;
     }
 
-    public void setMenuItemID(int menuItemID) {
-        this.menuItemID = menuItemID;
+    public void setMenuItemId(int menuItemID) {
+        this.menuItemId = menuItemID;
+    }
+
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
     }
 
     //Methods
 
     @Override
     public String toString() {
-        return "Order [id=" + id + ", menuItemID=" + menuItemID + ", userID=" + userID + "]";
+        return "Order [id=" + id + ", menuItemID=" + menuItemId + ", userID=" + userId + "]";
     }
 }

@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
+    <!-- Footer style -->
+    <div th:insert="fragments/footer-style"></div>
+
     <title>Grabbit | Dashboard</title>
 </head>
 <body>
@@ -12,7 +15,8 @@
     <div th:insert="fragments/navbar"></div>
     
     <!-- Menu Item update form-->
-    <div class="container">
+    <div id="wrap">
+    <div id="main" class="container" style="margin-top: 80px">
         <form th:action="@{/admin/menu/create}" method="POST">
             <div class="form-group">
                 <!-- Hidden input to get the menuItem id -->
@@ -30,7 +34,13 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    </div>
+
+    <!-- Footer fragment -->
+    <div th:insert="fragments/footer"></div>
+    
     <!-- Scripts fragment-->
     <div th:insert="fragments/bootstrapScripts"></div>
+
 </body>
 </html>
