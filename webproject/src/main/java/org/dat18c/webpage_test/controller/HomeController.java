@@ -10,16 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * HomeController
  */
 @Controller
-public class HomeController {
-
+public class HomeController 
+{
     @GetMapping("/")
-    public String getIndexRedirectPage() {
+    public String getIndexRedirectPage() 
+    {
         return "redirect:home";
     }
 
     @GetMapping("/home")
-    public String getHomePage() {
-        
+    public String getHomePage() 
+    {
+        return "/home";
+    }
+
+    @GetMapping("/login/redirect")
+    public String redirectAfterLogin()
+    {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         //If authenticated userdetails has admin role
@@ -30,8 +37,14 @@ public class HomeController {
         } 
         else
         {
-            return "redirect:/user/showMenu";
+            return "redirect:/user/order";
         }
+    }
+
+    @GetMapping("/user/order")
+    public String getUserMenuPage()
+    {
+        return "/user/showMenu";
     }
 
     @RequestMapping("/admin/dashboard")
@@ -41,7 +54,8 @@ public class HomeController {
     }
 
     @RequestMapping("/login")
-    public String login() {
+    public String login() 
+    {
         return "login";
     }
 }

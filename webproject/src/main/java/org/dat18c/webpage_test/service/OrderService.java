@@ -26,7 +26,7 @@ public class OrderService
     {
         Optional<Order> optionalOrder = orderRepository.findById(id);
 
-        if (!optionalOrder.isEmpty()) {
+        if (optionalOrder.isPresent()) {
             return optionalOrder.get();
         }
         return null;
