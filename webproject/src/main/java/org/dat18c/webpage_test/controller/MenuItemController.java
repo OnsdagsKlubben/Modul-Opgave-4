@@ -21,8 +21,7 @@ public class MenuItemController
     
     @GetMapping(value = "/admin/menu/new")
     public String createMenuItem(Model model)
-    {
-        model.addAttribute("menuItem", new MenuItem());
+    { 
         return "admin/menu/createMenuItem";
     }
 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grabbit | Sign up</title>
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
+   <!-- Fontawesome icons stylesheet -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+   <!-- Footer style -->
+   <div th:insert="fragments/footer-style"></div>
+
+   <!-- Bootstrap scripts fragment-->
+   <div th:insert="fragments/bootstrapScripts"></div>
+
+</head>
+<body>
+        <div id="wrap">
+                <div id="main" class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8" style="padding-top: 5%">
+                            <div class="card">
+                                <div class="card-header">Login</div>
+                                    <div class="card-body">
+                                        
+                                        <!--Sign up form -->
+
+                                        <form th:action="@{/register}" method="POST">
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">First name</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="firstName" placeholder="Enter first name" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Last name</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="lastName" placeholder="Enter last name" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+                                                    </div>
+                                                    <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Password</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2"><i class="fas fa-key"></i></span>
+                                                    </div>
+                                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Confirm password</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2"><i class="fas fa-key"></i></span>
+                                                    </div>
+                                                    <input id="confirm_password" type="password" class="form-control" placeholder="Password" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary">Register</button>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Footer fragment -->
+    <div th:insert="fragments/footer"></div>
+
+    <script>
+        var password = document.getElementById("password"), 
+        confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword()
+        {
+            if(password.value != confirm_password.value) 
+            {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } 
+            else 
+            {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+
+</body>
+</html>

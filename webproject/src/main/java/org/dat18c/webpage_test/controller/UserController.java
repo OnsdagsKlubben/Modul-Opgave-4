@@ -19,11 +19,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "/admin/users/create")
+    @PostMapping(value = "/register")
     public String createUser(@ModelAttribute User user)
     {
         userService.saveUser(user);
-        return "/admin/users";
+        return "/login";
     }
 
     @GetMapping(value = "/admin/users/new")

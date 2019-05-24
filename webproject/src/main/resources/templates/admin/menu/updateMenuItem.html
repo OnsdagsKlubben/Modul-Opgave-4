@@ -27,15 +27,15 @@
                 <!-- Hidden input to get the menuItem id -->
                 <input type="hidden" name="id" th:value="${menuItem.id}">
                 <label>Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Write the name here" th:value="${menuItem.name}">
+                <input type="text" name="name" class="form-control" placeholder="Write the name here" th:value="${menuItem.name}" required>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <input type="text" name="description" class="form-control" placeholder="Write the description here" th:value="${menuItem.description}">
+                <input type="text" name="description" class="form-control" placeholder="Write the description here" th:value="${menuItem.description}" required>
             </div>
             <div class="form-group">
                 <label>Price</label>
-                <input type="number" name="price" class="form-control" placeholder="Write the price here" th:value="${menuItem.price}">
+                <input type="number" name="price" class="form-control" placeholder="Write the price here" th:value="${menuItem.price}" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
