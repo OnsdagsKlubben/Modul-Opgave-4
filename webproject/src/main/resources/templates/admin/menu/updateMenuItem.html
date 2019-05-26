@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <input type="text" name="description" class="form-control" placeholder="Write the description here" th:value="${menuItem.description}" required>
+                <textarea class="form-control" name="description" maxlength="200" rows="3" required></textarea>
             </div>
             <div class="form-group">
                 <label>Price</label>
@@ -55,9 +55,6 @@
 
     <!-- Footer fragment -->
     <div th:insert="fragments/footer"></div>
-
-    <!-- Scripts fragment-->
-    <div th:insert="fragments/bootstrapScripts"></div>
 
 </body>
 </html>
