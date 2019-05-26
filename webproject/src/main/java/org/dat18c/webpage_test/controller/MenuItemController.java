@@ -59,4 +59,12 @@ public class MenuItemController
         menuItemService.deleteMenuItemById(id);
         return "redirect:/admin/menu";
     }
+
+    
+    @GetMapping(value = "/user/menu")
+    public String getUserMenuView(Model model)
+    {
+        model.addAttribute("menuItems", menuItemService.findAllMenuItems());
+        return "/user/showMenu";
+    }
 }
