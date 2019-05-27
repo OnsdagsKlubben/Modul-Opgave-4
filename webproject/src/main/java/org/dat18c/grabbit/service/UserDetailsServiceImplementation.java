@@ -1,10 +1,10 @@
-package org.dat18c.webpage_test.service;
+package org.dat18c.grabbit.service;
 
 import java.util.Collection;
 import java.util.Collections;
 
-import org.dat18c.webpage_test.model.User;
-import org.dat18c.webpage_test.repository.UserRepository;
+import org.dat18c.grabbit.model.User;
+import org.dat18c.grabbit.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -87,7 +87,6 @@ public class UserDetailsServiceImplementation implements UserDetailsService
                 }
             }
         };
-        System.out.println(userDetails.getAuthorities());
         return userDetails;
     }
 

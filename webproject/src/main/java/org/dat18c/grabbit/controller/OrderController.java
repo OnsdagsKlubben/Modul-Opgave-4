@@ -1,6 +1,6 @@
-package org.dat18c.webpage_test.controller;
+package org.dat18c.grabbit.controller;
 
-import org.dat18c.webpage_test.service.OrderService;
+import org.dat18c.grabbit.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

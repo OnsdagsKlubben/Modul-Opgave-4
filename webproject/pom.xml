@@ -8,14 +8,14 @@
 		<version>2.2.0.M3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.dat18c.webpage_test</groupId>
+	<groupId>org.dat18c.grabbit</groupId>
 	<artifactId>webproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>grabbit demo</name>
+	<description>Grabbit project for Spring Boot</description>
 
 	<properties>
-		<java.version>12</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>

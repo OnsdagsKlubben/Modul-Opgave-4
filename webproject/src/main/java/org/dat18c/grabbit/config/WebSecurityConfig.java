@@ -1,6 +1,6 @@
-package org.dat18c.webpage_test.config;
+package org.dat18c.grabbit.config;
 
-import org.dat18c.webpage_test.service.UserDetailsServiceImplementation;
+import org.dat18c.grabbit.service.UserDetailsServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

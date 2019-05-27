@@ -1,4 +1,4 @@
-package org.dat18c.webpage_test.model;
+package org.dat18c.grabbit.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

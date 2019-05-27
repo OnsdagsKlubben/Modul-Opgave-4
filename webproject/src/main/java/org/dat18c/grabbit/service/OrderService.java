@@ -1,10 +1,10 @@
-package org.dat18c.webpage_test.service;
+package org.dat18c.grabbit.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.dat18c.webpage_test.model.Order;
-import org.dat18c.webpage_test.repository.OrderRepository;
+import org.dat18c.grabbit.model.Order;
+import org.dat18c.grabbit.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

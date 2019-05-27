@@ -1,7 +1,7 @@
-package org.dat18c.webpage_test.controller;
+package org.dat18c.grabbit.controller;
 
-import org.dat18c.webpage_test.model.User;
-import org.dat18c.webpage_test.service.UserService;
+import org.dat18c.grabbit.model.User;
+import org.dat18c.grabbit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
