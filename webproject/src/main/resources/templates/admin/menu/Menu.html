@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
   xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 
@@ -10,6 +10,7 @@
   <!-- Bootstrap css -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
   <!-- Bootstrap scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -23,7 +24,7 @@
     crossorigin="anonymous"></script>
 
   <!-- Own styling -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
 
   <!-- Datatables css, js imports -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
@@ -33,34 +34,33 @@
 
 <body>
   <!-- Navbar fragment -->
-  <div th:insert="fragments/navbar-admin"></div>
+  <div th:insert="@{fragments/navbar-admin}"></div>
 
   <!-- Display menu items here in a table -->
   <div id="wrap">
     <div id="main" class="container">
-      <h1>Users table</h1>
-      <br>
+      <h1>Menu items table</h1>
+      <a class="btn btn-outline-dark" href="/admin/menu/new" style="margin-bottom: 15px;">Add new</a>
       <table id="myTable" class="table table-striped table-bordered">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Id</th>
-            <th scope="col">First name</th>
-            <th scope="col">Last name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Authority</th>
-            <th scope="col">Options</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col" style="width: 105px">Options</th>
           </tr>
         </thead>
         <tbody>
-          <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
-            <td th:text="${user.firstName}"></td>
-            <td th:text="${user.lastName}"></td>
-            <td th:text="${user.email}"></td>
-            <td th:text="${user.adminRole}"></td>
+          <tr th:each="menuItem : ${menuItems}">
+            <td th:text="${menuItem.id}"></td>
+            <td th:text="${menuItem.name}"></td>
+            <td th:text="${menuItem.description}"></td>
+            <td th:text="${menuItem.price}"></td>
             <td>
-              <button class="btn btn-outline-dark btn-sm">update</button>
-              <button class="btn btn-outline-dark btn-sm">delete</button>
+              <a th:href="@{'/admin/menu/update/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm">update</a>
+              <a th:href="@{'/admin/menu/delete/' + ${menuItem.id}}" class="btn btn-outline-dark btn-sm"
+                onclick="if(!(confirm('Are you sure you want to delete this menu item?'))) return false">delete</a>
             </td>
           </tr>
         </tbody>
@@ -73,7 +73,8 @@
 
   <!-- Pagination script -->
   <script>
-    $(document).ready(function () {
+    $(document).ready(function ()
+    {
       $('#myTable').DataTable();
       $('.dataTables_length').addClass('bs-select');
     });

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Grabbit | Dashboard</title>
+    <title>Document</title>
 
     <!-- Bootstrap css -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Datatables css, js imports -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Own styling -->
-    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
+    <!-- Fontawesome icons stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -28,27 +28,26 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!-- Own styling -->
+    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <div th:insert="@{fragments/navbar-admin}"></div>
-
+    <!-- Content -->
     <div id="wrap">
-        <div id="main" class="container">
+        <div id="main">
 
+            <!--Navbar-->
+            <div th:insert="fragments/navbar-user"></div>
         </div>
     </div>
-
+    
+    
     <!-- Footer fragment -->
     <div th:insert="fragments/footer"></div>
 
-    <!-- Pagination script -->
-    <script>
-      $(document).ready( function () {
-        $('#myTable').DataTable();
-        $('.dataTables_length').addClass('bs-select');
-    } );
-    </script>
-
 </body>
+
 </html>

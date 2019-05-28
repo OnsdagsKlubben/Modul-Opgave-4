@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * MenuItemController
+ * @author Frederik Lundbeck Jørgensen
  */
 @Controller
 public class MenuItemController 
@@ -22,7 +23,7 @@ public class MenuItemController
     @GetMapping(value = "/admin/menu/new")
     public String createMenuItem(Model model)
     { 
-        return "admin/menu/createMenuItem";
+        return "admin/menu/NewMenuItem";
     }
 
     @PostMapping(value = "/admin/menu/create")
@@ -36,14 +37,14 @@ public class MenuItemController
     public String showMenu(Model model) 
     {
         model.addAttribute("menuItems", menuItemService.findAllMenuItems());
-        return "admin/menu/showMenu";
+        return "admin/menu/Menu";
     }
 
     @GetMapping(value = "/admin/menu/update/{id}")
     public String showUpdateItem(@PathVariable("id") int id, Model model) 
     {
         model.addAttribute("menuItem", menuItemService.findMenuItemById(id));
-        return "admin/menu/updateMenuItem";
+        return "admin/menu/EditMenuItem";
     }
 
     @PostMapping(value = "/admin/menu/update")
@@ -59,12 +60,11 @@ public class MenuItemController
         menuItemService.deleteMenuItemById(id);
         return "redirect:/admin/menu";
     }
-
     
     @GetMapping(value = "/user/menu")
     public String getUserMenuView(Model model)
     {
         model.addAttribute("menuItems", menuItemService.findAllMenuItems());
-        return "/user/showMenu";
+        return "/user/Menu";
     }
 }

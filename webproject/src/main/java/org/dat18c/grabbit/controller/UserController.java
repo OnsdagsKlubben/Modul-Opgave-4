@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * UserController
+ * @author Frederik Lundbeck Jørgensen
  */
 @Controller
 public class UserController {
@@ -23,21 +24,14 @@ public class UserController {
     public String createUser(@ModelAttribute User user)
     {
         userService.saveUser(user);
-        return "/login";
-    }
-
-    @GetMapping(value = "/admin/users/new")
-    public String getCreateUserPage(Model model) 
-    {
-        model.addAttribute("user", new User());
-        return "/admin/users/createUser";
+        return "redirect:/login";
     }
     
     @GetMapping(value = "/admin/users")
     public String showUsers(Model model)
     {
         model.addAttribute("users", userService.findAllUsers());
-        return "/admin/users/showUsers";
+        return "/admin/users/Users";
     }
 
     @GetMapping(value = "/admin/users/delete/{id}")

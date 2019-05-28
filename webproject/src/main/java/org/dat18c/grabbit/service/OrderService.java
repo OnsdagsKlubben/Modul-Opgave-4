@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * OrderService
+ * @author Frederik Lundbeck Jørgensen
  */
 @Service
 public class OrderService 

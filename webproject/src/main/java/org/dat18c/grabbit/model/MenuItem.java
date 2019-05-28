@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 /**
  * MenuItem
+ * @author Frederik Lundbeck Jørgensen
  */
 @Entity
 @Table(name = "menu_items")

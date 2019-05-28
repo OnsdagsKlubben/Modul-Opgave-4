@@ -3,19 +3,13 @@
     xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Grabbit | Dashboard</title>
 
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Fontawesome icons stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -29,27 +23,36 @@
         crossorigin="anonymous"></script>
 
     <!-- Own styling -->
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+    <!-- Navbar fragment -->
+    <div th:insert="@{fragments/navbar-admin}"></div>
 
-    <!-- Content -->
+    <!-- Menu Item update form-->
     <div id="wrap">
-        <div id="main">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div id="main" class="container">
+            <h1>New menu item</h1>
+            <form th:action="@{/admin/menu/create}" method="POST">
+                <div class="form-group">
+                    <!-- Hidden input to get the menuItem id -->
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter name here" name="name" class="form-control" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" name="description" maxlength="200" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" placeholder="Enter price here" name="price" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
-
 
     <!-- Footer fragment -->
     <div th:insert="fragments/footer"></div>

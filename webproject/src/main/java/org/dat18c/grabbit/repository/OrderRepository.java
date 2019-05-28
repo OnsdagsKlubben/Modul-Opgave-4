@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * OrderRepository
+ * @author Frederik Lundbeck Jørgensen
  */
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer> 

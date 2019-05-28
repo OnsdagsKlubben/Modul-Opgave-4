@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 /**
  * WebSecurityConfig
+ * @author Frederik Lundbeck Jørgensen
  */
 @Configuration
 @EnableWebSecurity

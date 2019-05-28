@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * HomeController
+ * @author Frederik Lundbeck Jørgensen
  */
 @Controller
 public class HomeController 
@@ -21,7 +22,7 @@ public class HomeController
     @GetMapping("/home")
     public String getHomePage() 
     {
-        return "/home";
+        return "/Home";
     }
 
     @GetMapping("/login/redirect")
@@ -40,29 +41,23 @@ public class HomeController
             return "redirect:/user/order";
         }
     }
-
-    @GetMapping("/user/order")
-    public String getUserMenuPage()
-    {
-        return "/user/showMenu";
-    }
-
+    
     @RequestMapping("/admin/dashboard")
     public String getAdminDashboard()
     {
-        return "admin/dashboard";
+        return "admin/Dashboard";
     }
 
     @RequestMapping("/login")
     public String login() 
     {
-        return "login";
+        return "Login";
     }
 
     @GetMapping("/sign-up")
     public String getSignUpView()
     {
-        return "signUpPage";
+        return "SignUp";
     }
     
 }

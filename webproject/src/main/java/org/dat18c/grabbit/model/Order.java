@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 /**
  * Order
+ * @author Frederik Lundbeck Jørgensen
  */
 @Entity
 @Table(name = "orders")

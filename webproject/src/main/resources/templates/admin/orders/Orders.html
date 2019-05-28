@@ -24,7 +24,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Own styling -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
 
     <!-- Datatables css, js imports -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" />
@@ -34,7 +34,7 @@
 <body>
 
     <!-- Navbar fragment -->
-    <div th:insert="fragments/navbar-admin"></div>
+    <div th:insert="@{fragments/navbar-admin}"></div>
 
     <div id="wrap">
         <div id="main" class="container">

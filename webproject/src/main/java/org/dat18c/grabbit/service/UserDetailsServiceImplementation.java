@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * UserDetailsService
+ * @author Frederik Lundbeck Jørgensen
  */
 @Service
 public class UserDetailsServiceImplementation implements UserDetailsService 

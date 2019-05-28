@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * MenuItemRepository
+ * @author Frederik Lundbeck Jørgensen
  */
 @Repository
 public interface MenuItemRepository extends JpaRepository<MenuItem, Integer> 

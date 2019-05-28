@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 /**
  * User
+ * @author Frederik Lundbeck Jørgensen
  */
 @Entity
 @Table(name = "users")
