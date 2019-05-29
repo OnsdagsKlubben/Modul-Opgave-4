@@ -35,18 +35,38 @@
 
 <body>
 
+    <!--Navbar-->
+    <div th:insert="@{fragments/navbar}"></div>
+
     <!-- Content -->
     <div id="wrap">
-        <div id="main">
+        <div id="main" class="container">
+            <h1>Menu</h1>
+            <div class="menu-item-view">
 
-            <!--Navbar-->
-            <div th:insert="fragments/navbar"></div>
+                <div class="card-columns">
+                    <div th:each="menuItem : ${menuItems}">
+                        <div class="card menu-card border-dark" style="width: 18rem;">
+                            <img th:src="${menuItem.pictureURL}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${menuItem.name}"></h5>
+                                <h6 class="card-subtitle mb-2 text-muted" th:text="${menuItem.price} + ' DKK'"></h6>
+                                <p class="card-text" th:text="${menuItem.description}"></p>
+                                <div class="add-to-cart-btn-wrapper">
+                                    <a class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    
+
+
     <!-- Footer fragment -->
-    <div th:insert="fragments/footer"></div>
+    <div th:insert="@{fragments/footer}"></div>
 
 </body>
 

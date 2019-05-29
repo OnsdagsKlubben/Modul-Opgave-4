@@ -33,7 +33,7 @@
 
 <body>
   <!-- Navbar fragment -->
-  <div th:insert="@{fragments/navbar-admin}"></div>
+  <div th:insert="@{fragments/navbar}"></div>
 
   <!-- Display menu items here in a table -->
   <div id="wrap">
@@ -69,11 +69,12 @@
   </div>
 
   <!-- Footer fragment -->
-  <div th:insert="fragments/footer"></div>
+  <div th:insert="@{fragments/footer}"></div>
 
   <!-- Pagination script -->
   <script>
-    $(document).ready(function () {
+    $(document).ready(function ()
+    {
       $('#myTable').DataTable();
       $('.dataTables_length').addClass('bs-select');
     });

@@ -4,7 +4,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * HomeController
@@ -38,17 +37,17 @@ public class HomeController
         } 
         else
         {
-            return "redirect:/user/";
+            return "redirect:/user/menu";
         }
     }
     
-    @RequestMapping("/admin/dashboard")
+    @GetMapping("/admin/dashboard")
     public String getAdminDashboard()
     {
         return "admin/Dashboard";
     }
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login() 
     {
         return "Login";
