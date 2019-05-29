@@ -24,20 +24,19 @@ public class UserDetailsServiceImplementation implements UserDetailsService
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException 
+    public UserDetails loadUserByUsername(String email) 
     {
         User user = userRepository.findByEmail(email);
 
         if (user == null) 
         {
-            throw new UsernameNotFoundException("User not found!");
+            throw new UsernameNotFoundException(
+              "No user found with email: " + email);
         }
+
 
         UserDetails userDetails = new UserDetails()
         {
-    
-            private static final long serialVersionUID = 1L;
-
             @Override
             public boolean isEnabled() 
             {
@@ -77,7 +76,6 @@ public class UserDetailsServiceImplementation implements UserDetailsService
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() 
             {
-
                 if (!user.getAdminRole()) 
                 {
                     return Collections.singleton(new SimpleGrantedAuthority("USER"));

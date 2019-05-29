@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>403</title>
 
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,6 +15,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+    <!-- Own styling -->
+    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -27,24 +28,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-    <!-- Own styling -->
-    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-    <!-- Content -->
     <div id="wrap">
         <div id="main">
 
-            <!--Navbar-->
-            <div th:insert="fragments/navbar"></div>
+            <!-- Content -->
+            <div class="container">
+                <div class="error">
+                    <h1>Wooops</h1>
+                    <h2>You encountered an error page!</h2>
+                    <h3>Click here to come back in safety</h3>
+                    <a href="/home" class="btn btn-success">Safety</a>
+                </div>
+            </div>
+
         </div>
     </div>
-    
-    
+
+
+
     <!-- Footer fragment -->
     <div th:insert="fragments/footer"></div>
 

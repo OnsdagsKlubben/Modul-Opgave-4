@@ -20,13 +20,6 @@ public class OrderController
     @Autowired
     private OrderService orderService;
 
-    @GetMapping(value = "/user/order")
-    public String getUserOrderView(Model model)
-    {
-        model.addAttribute("orders", orderService.findAllOrders());
-        return "user/Menu";
-    }
-
     @GetMapping(value = "/admin/orders")
     public String showAllOrdersPage(Model model)
     {

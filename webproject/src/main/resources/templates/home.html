@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <!-- Own styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <link type="text/css" th:href="@{/css/style.css}" href="css/style.css" rel="stylesheet">
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -34,7 +34,7 @@
 
 <body>
     <!-- Navbar -->
-    <div th:insert="@{fragments/navbar-home}"></div>
+    <div th:insert="@{fragments/navbar}"></div>
 
     <!-- Frontpage -->
     <div id="wrap">
@@ -90,9 +90,8 @@
         </div>
     </div>
 
-    <footer class="footer">
-        Designed and built by the <a href="#">Grabbit team.</a>
-    </footer>
+    <!-- Footer fragment -->
+    <div th:insert="fragments/footer"></div>
 
 </body>
 

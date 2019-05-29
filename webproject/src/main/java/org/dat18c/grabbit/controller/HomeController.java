@@ -38,7 +38,7 @@ public class HomeController
         } 
         else
         {
-            return "redirect:/user/order";
+            return "redirect:/user/";
         }
     }
     

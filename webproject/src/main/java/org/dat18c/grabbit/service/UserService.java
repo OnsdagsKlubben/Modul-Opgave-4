@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author Frederik Lundbeck Jørgensen
  */
 @Service
-public class UserService 
+public class UserService
 {
     @Autowired
     private UserRepository userRepository;
@@ -45,5 +45,4 @@ public class UserService
     {
         userRepository.deleteById(id);
     }
-    
 }
