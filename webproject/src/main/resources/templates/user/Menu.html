@@ -46,24 +46,28 @@
 
                 <div class="card-columns">
                     <div th:each="menuItem : ${menuItems}">
-                        <div class="card menu-card border-dark" style="width: 18rem;">
-                            <img th:src="${menuItem.pictureURL}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" th:text="${menuItem.name}"></h5>
-                                <h6 class="card-subtitle mb-2 text-muted" th:text="${menuItem.price} + ' DKK'"></h6>
-                                <p class="card-text" th:text="${menuItem.description}"></p>
-                                <div class="add-to-cart-btn-wrapper">
-                                    <a class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+
+
+                            <div class="card menu-card border-dark" style="width: 18rem;">
+                                <img th:src="${menuItem.pictureURL}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${menuItem.name}"></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted" th:text="${menuItem.price} + ' DKK'"></h6>
+                                    <div class="long-text-suppress">
+                                        <p  class="card-text" th:text="${menuItem.description}"></p>
+                                    </div>
+                                    <div class="add-to-cart-btn-wrapper">
+                                        <a class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-    
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- Footer fragment -->
     <div th:insert="@{fragments/footer}"></div>
