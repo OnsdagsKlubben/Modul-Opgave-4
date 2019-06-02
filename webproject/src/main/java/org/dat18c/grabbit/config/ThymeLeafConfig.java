@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 
 /**
- * ThymeLeafConfig
+ * ThymeLeafConfig. 
+ * Denne klasse er en konfigurations klasse til ThymeLeaf.
+ * @author Frederik Lundbeck Jørgensen
  */
 @Configuration
 public class ThymeLeafConfig {

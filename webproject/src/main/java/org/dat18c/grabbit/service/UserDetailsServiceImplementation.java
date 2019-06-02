@@ -76,14 +76,7 @@ public class UserDetailsServiceImplementation implements UserDetailsService
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() 
             {
-                if (!user.getAdminRole()) 
-                {
-                    return Collections.singleton(new SimpleGrantedAuthority("USER"));
-                } 
-                else 
-                {
-                    return Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
-                }
+                return (!user.getAdminRole()) ? Collections.singleton(new SimpleGrantedAuthority("USER")) : Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
             }
         };
         return userDetails;

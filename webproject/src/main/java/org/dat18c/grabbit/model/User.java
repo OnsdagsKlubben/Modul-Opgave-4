@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * User
+ * Model klassen for vores database entity user.
  * @author Frederik Lundbeck Jørgensen
  */
 @Entity

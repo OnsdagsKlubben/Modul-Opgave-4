@@ -83,7 +83,7 @@
                     </ul>
 
                     <form class="card p-2">
-                        <form action="/user/checkout" method="POST" class="input-group-append">
+                        <form th:action="@{/user/checkout}" method="POST" class="input-group-append">
                             <button id="checkout-btn" type="submit" class="btn btn-secondary">Checkout <i
                                     class="fa fa-angle-right"></i></button>
                         </form>
@@ -101,6 +101,7 @@
                                 <div th:each="menuItem : ${menuItems}">
 
                                     <div class="card food-card" style="width: 14rem;">
+                                        <div class="food-id-hidden-field" hidden th:text="${menuItem.id}"></div>
                                         <img th:src="${menuItem.pictureURL}" class="card-img-top" alt="...">
                                         <div class="card-body flex-column d-flex">
                                             <h5 class="card-title" th:text="${menuItem.name}"></h5>
@@ -142,7 +143,7 @@
         crossorigin="anonymous"></script>
 
     <!-- MenuScript -->
-    <script th:src="@{../js/MenuScript.js}" th:inline="javascript"></script>
+    <script th:src="@{../js/MenuScript.js}"></script>
 
 </body>
 

@@ -1,24 +1,33 @@
 package org.dat18c.grabbit.controller;
 
-import org.dat18c.grabbit.service.MenuItemService;
+import org.dat18c.grabbit.service.CheckoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- * CheckOutController
+ * CheckOutController håndtere de requests, der har med indkøbskurven og checkout at gøre.
+ * @author Frederik Lundbeck Jørgensen
  */
 @Controller
-public class CheckoutController {
-
+public class CheckoutController 
+{
     @Autowired
-    private MenuItemService menuItemService;
+    private CheckoutService checkoutService;
 
-    @GetMapping(value = "/user/checkout")
-    public String getCheckoutPage(Model model)
-    {
-        model.addAttribute("menuItems", menuItemService.findAllMenuItems());
-        return "/user/Checkout";
+    /**
+     * Bliver brugt når brugeren ligger en vare i sin indkøbskurv.
+     * Metoden kalder en anden metode fra vores objekt checkoutService,
+     * denne metode ligger menu item id'et til en hashmap kollektion.
+     * @param id
+     * @return
+     */
+    @PostMapping(value="/add/{id}")
+    public String addFoodItem(@PathVariable("id") int id) {
+
+        checkoutService.addMenuItem(id);
+        return "user/PostTest";
     }
+    
 }

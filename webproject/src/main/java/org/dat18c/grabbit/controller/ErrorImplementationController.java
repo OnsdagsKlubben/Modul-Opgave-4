@@ -7,14 +7,19 @@ import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 /**
- * ErrorImplementationController 
+ * ErrorImplementationController står for at håndtere problemerne, når ServletDispatcheren ikke kan finde nogen
+ * controller der har en respons til en request. Istedet for at blive mødt med Springs standard error page kan vi vælge
+ * at vise vores egen.
  * @author Frederik Lundbeck Jørgensen
  */
 @Controller
 public class ErrorImplementationController implements ErrorController
 {
+    /**
+     * @param request,en HttpServlet der indeholder informationer om requests.
+     * @return stien til den html fil som fejlen drejer som om.
+     */
     @RequestMapping("/error")
     public String handleError(HttpServletRequest request) 
     {

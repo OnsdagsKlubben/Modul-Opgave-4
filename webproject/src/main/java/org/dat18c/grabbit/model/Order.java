@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Order
+ * Model klassen for vores database entity orders
  * @author Frederik Lundbeck Jørgensen
  */
 @Entity

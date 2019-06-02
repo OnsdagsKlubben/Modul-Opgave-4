@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * MenuItem
+ * Model klassen for vores database entity menu_item
  * @author Frederik Lundbeck Jørgensen
  */
 @Entity
