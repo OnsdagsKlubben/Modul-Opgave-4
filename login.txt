@@ -1,0 +1,4 @@
+ADMIN EMAIL: admin@test.dk
+ADMIN PASS: password
+USER EMAIL: user@test.dk
+USER PASS: password

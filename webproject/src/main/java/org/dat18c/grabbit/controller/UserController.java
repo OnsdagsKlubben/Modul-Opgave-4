@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * UserController
  * Sørger for at håndtere alle de request der har
  * med brugere at gøre.
- * @author Frederik Lundbeck Jørgensen
+ * @author Frederik Lundbeck Jørgensen & Nicklas List
  */
 @Controller
 public class UserController 
