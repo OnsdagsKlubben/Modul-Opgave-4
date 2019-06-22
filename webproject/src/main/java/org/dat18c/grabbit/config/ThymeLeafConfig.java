@@ -7,7 +7,7 @@ import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 /**
  * ThymeLeafConfig. 
  * Denne klasse er en konfigurations klasse til ThymeLeaf.
- * @author Frederik Lundbeck Jørgensen
+ * @author Frederik Lundbeck Jørgensen & Søren Carlsen
  */
 @Configuration
 public class ThymeLeafConfig {

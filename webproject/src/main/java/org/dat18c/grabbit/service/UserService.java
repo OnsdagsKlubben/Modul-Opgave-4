@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * UserService
- * @author Frederik Lundbeck Jørgensen
+ * @author Nicklas List & Frederik Lundbeck Jørgensen
  */
 @Service
 public class UserService

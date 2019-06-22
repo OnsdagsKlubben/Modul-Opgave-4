@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * UserDetailsRepository
- * @author Frederik Lundbeck Jørgensen
+ * @author Nicklas List
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> 

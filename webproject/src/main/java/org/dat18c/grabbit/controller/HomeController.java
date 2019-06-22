@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * HomeController
  * Denne controller håndtere requests til funktioner og views der er tilgængeligt
  * for både users og admins. 
- * @author Frederik Lundbeck Jørgensen
+ * @author Frederik Lundbeck Jørgensen & Søren Carlsen
  */
 @Controller
 public class HomeController 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * CheckOutController håndtere de requests, der har med indkøbskurven og checkout at gøre.
- * @author Frederik Lundbeck Jørgensen
+ * @author Søren Carlsen
  */
 @Controller
 public class CheckoutController 

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 /**
  * Model klassen for vores database entity user.
- * @author Frederik Lundbeck Jørgensen
+ * @author Frederik Lundbeck Jørgensen & Marcus Bender Knudsen
  */
 @Entity
 @Table(name = "users")

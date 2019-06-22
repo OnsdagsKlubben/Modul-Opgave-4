@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * MenuItemController
  * Sørger for at håndtere alle de request der har
  * med menu items at gøre.
- * @author Frederik Lundbeck Jørgensen
+ * @author Frederik Lundbeck Jørgensen & Nicklas List 
  */
 @Controller
 public class MenuItemController 

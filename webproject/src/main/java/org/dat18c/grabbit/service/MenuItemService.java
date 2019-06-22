@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * MenuItemService
- * @author Frederik Lundbeck Jørgensen
+ * @author Frederik Lundbeck Jørgensen & Marcus Bender Knudsen
  */
 @Service
 public class MenuItemService 
